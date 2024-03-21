@@ -19,11 +19,11 @@ public class Responder
         random = new Random();
         numero = new ArrayList<>();
         
-        numero.add("respuesta 1");
-        numero.add("respuesta 2");
-        numero.add("respuesta 3");
-        numero.add("respuesta 4");
-        numero.add("respuesta 5");
+        numero.add("Are you sure?");
+        numero.add("I need a bit more information on that");
+        numero.add("What is your operating system?");
+        numero.add("Ok, we are working on that problem!");
+        numero.add("Can you give me more information?");
     }
 
     /**
