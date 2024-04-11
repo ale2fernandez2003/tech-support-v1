@@ -26,6 +26,11 @@ public class Responder
         numero.add("What is your operating system?");
         numero.add("Ok, we are working on that problem!");
         numero.add("Can you give me more information?");
+        
+        respuestas.put("1", "primera");
+        respuestas.put("2","segunda");
+        respuestas.put("3","tercera");
+        respuestas.put("4","cuarta");
     }
 
     /**
@@ -36,7 +41,7 @@ public class Responder
     {
         String respuesta = "";
         if(respuestas.containsKey(userInput)){
-            respuestas.get(userInput);
+            respuesta = respuestas.get(userInput);
         }
         
         else{
