@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 import java.util.ArrayList;
 /**
@@ -11,6 +12,7 @@ public class Responder
 {
     private Random random;
     private ArrayList<String> numero;
+    private HashMap<String, String> respuestas;
     /**
      * Construct a Responder - nothing to do
      */
@@ -18,7 +20,7 @@ public class Responder
     {
         random = new Random();
         numero = new ArrayList<>();
-        
+        respuestas = new HashMap<>();
         numero.add("Are you sure?");
         numero.add("I need a bit more information on that");
         numero.add("What is your operating system?");
@@ -30,9 +32,17 @@ public class Responder
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse()
+    public String generateResponse(String userInput)
     {
-        int num = random.nextInt(numero.size());
-        return numero.get(num);
+        String respuesta = "";
+        if(respuestas.containsKey(userInput)){
+            respuestas.get(userInput);
+        }
+        
+        else{
+            int num = random.nextInt(numero.size());
+            respuesta=  numero.get(num);
+        }
+        return respuesta;
     }
 }
