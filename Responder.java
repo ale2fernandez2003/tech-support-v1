@@ -28,7 +28,7 @@ public class Responder
         numero.add("Ok, we are working on that problem!");
         numero.add("Can you give me more information?");
         
-        respuestas.put("1", "primera");
+        respuestas.put("1","primera");
         respuestas.put("2","segunda");
         respuestas.put("3","tercera");
         respuestas.put("4","cuarta");
@@ -44,8 +44,9 @@ public class Responder
         for (String palabra : userInput) {
             if(respuestas.containsKey(palabra)){
                 respuesta = respuestas.get(palabra);
+                break;
             }
-            
+                
             else{
                 int num = random.nextInt(numero.size());
                 respuesta=  numero.get(num);
