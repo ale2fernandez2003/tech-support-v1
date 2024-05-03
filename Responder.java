@@ -16,7 +16,7 @@ public class Responder
     private HashMap<String, String> respuestas;
     private HashSet<String> responder1;
     private HashSet<String> responder2;
-    private HashMap<HashSet<String>, String> responses1;
+    private HashMap<HashSet<String>, String> responses;
     
     /**
      * Construct a Responder - nothing to do
@@ -28,7 +28,7 @@ public class Responder
         respuestas = new HashMap<>();
         responder1 = new HashSet<>();
         responder2 = new HashSet<>();
-        responses1 = new HashMap<>();
+        responses = new HashMap<>();
         numero.add("Are you sure?");
         numero.add("I need a bit more information on that");
         numero.add("What is your operating system?");
@@ -42,12 +42,12 @@ public class Responder
         
         responder1.add("free");
         responder1.add("app");
-        responses1.put(responder1, "responder1 coincide");
+        responses.put(responder1, "responder1 coincide");
         
         responder2.add("problem");
         responder2.add("linux");
         responder2.add("crash");
-        responses1.put(responder2, "responder2 coincide");
+        responses.put(responder2, "responder2 coincide");
     }
 
     /**
@@ -67,13 +67,10 @@ public class Responder
                 respuesta=  numero.get(num);
             }
         }
-        
-        if(responder1.containsAll(userInput)){
-            respuesta = responses1.get(userInput);
-        }
-            
-        else if(responder2.containsAll(userInput)){
-            respuesta = responses1.get(userInput);
+        for (HashSet<String> solucion : responses.keySet()) {
+            if(solucion.equals(userInput)){
+                respuesta = responses.get(solucion);
+            }
         }
         return respuesta;
     }
