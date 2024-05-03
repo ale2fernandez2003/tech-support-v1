@@ -17,7 +17,7 @@ public class Responder
     private HashSet<String> responder1;
     private HashSet<String> responder2;
     private HashMap<HashSet<String>, String> responses1;
-    private HashMap<HashSet<String>, String> responses2;
+    
     /**
      * Construct a Responder - nothing to do
      */
@@ -29,7 +29,6 @@ public class Responder
         responder1 = new HashSet<>();
         responder2 = new HashSet<>();
         responses1 = new HashMap<>();
-        responses2 = new HashMap<>();
         numero.add("Are you sure?");
         numero.add("I need a bit more information on that");
         numero.add("What is your operating system?");
@@ -48,7 +47,7 @@ public class Responder
         responder2.add("problem");
         responder2.add("linux");
         responder2.add("crash");
-        responses2.put(responder2, "responder2 coincide");
+        responses1.put(responder2, "responder2 coincide");
     }
 
     /**
@@ -70,11 +69,11 @@ public class Responder
         }
         
         if(responder1.containsAll(userInput)){
-                respuesta = responses1.get(userInput);
+            respuesta = responses1.get(userInput);
         }
             
         else if(responder2.containsAll(userInput)){
-                respuesta = responses2.get(userInput);
+            respuesta = responses1.get(userInput);
         }
         return respuesta;
     }
